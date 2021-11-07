@@ -4,6 +4,8 @@ import Button from '@material-ui/core/Button';
 import TaskList from './components/TaskList/TaskList';
 import CreateTask from './components/CreateTask/CreateTask';
 import './App.css';
+const apiUrl = process.env.REACT_APP_API_URL;
+
 
 function App() {
 	const [error, setError] = useState(null);
@@ -25,7 +27,7 @@ function App() {
 			method: 'POST',
 		};
 
-		fetch(`http://localhost:5000/tasks/delete/${id}`, options).then(
+		fetch(`${apiUrl}/tasks/delete/${id}`, options).then(
 			(result) => {
 				setIsLoaded(true);
 				window.location.reload();
@@ -38,7 +40,7 @@ function App() {
 	};
 
 	useEffect(() => {
-		fetch('http://localhost:5000/tasks')
+		fetch(`${apiUrl}/tasks`)
 			.then((res) => res.json())
 			.then(
 				(result) => {

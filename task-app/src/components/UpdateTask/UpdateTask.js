@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const UpdateTask = ({ task, saveTask }) => {
 	const [error, setError] = useState(null);
@@ -39,7 +40,7 @@ const UpdateTask = ({ task, saveTask }) => {
 			},
 		};
 
-		fetch(`http://localhost:5000/tasks/${task._id}`, options).then(
+		fetch(`${apiUrl}/tasks/${task._id}`, options).then(
 			(result) => {
 				saveTask();
 			},
