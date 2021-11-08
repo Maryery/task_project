@@ -40,3 +40,29 @@ export const ButtonContent = styled(Button)`
 	height: 20px;
 	font-size: 10px;
 `;
+
+export const Priority = styled.div`
+	text-transform: uppercase;
+`;
+
+export const HighCircle = styled.span`
+	height: 10px;
+	width: 10px;
+	background-color: red;
+	border-radius: 50%;
+	display: inline-block;
+`;
+export const MediumCircle = styled.span`
+	height: 10px;
+	width: 10px;
+	background-color: yellow;
+	border-radius: 50%;
+	display: inline-block;
+`;
+export const LowCircle = styled.span`
+	height: 10px;
+	width: 10px;
+	background-color: green;
+	border-radius: 50%;
+	display: inline-block;
+`;

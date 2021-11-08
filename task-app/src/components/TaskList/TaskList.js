@@ -33,9 +33,17 @@ const TaskList = ({ tasks, deleteTask, saveTask }) => {
 						<CardContent>
 							<S.TaskContainer>
 								<S.Title>{task.title}</S.Title>
-								<div>Priority:{task.priority}</div>
-								<div>Estate:{task.state}</div>
+								<div>state:{task.state}</div>
 								<div>Finish date:{task.finish_date}</div>
+								 {task.priority === "high"&& (
+									<S.Priority>Prioridad: <S.HighCircle></S.HighCircle> {task.priority}</S.Priority>
+									)}
+									{task.priority === "medium"&& (
+									<S.Priority>Prioridad: <S.MediumCircle></S.MediumCircle> {task.priority}</S.Priority>
+									)}
+									{task.priority === "low"&& (
+									<S.Priority>Prioridad: <S.LowCircle></S.LowCircle> {task.priority}</S.Priority>
+									)}
 							</S.TaskContainer>
 						</CardContent>
 					</CardActionArea>
